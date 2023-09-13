@@ -14,6 +14,7 @@
 		BA4E29D42AB247A7008F92D2 /* SwiftUIWithCommentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29D32AB247A7008F92D2 /* SwiftUIWithCommentsTests.swift */; };
 		BA4E29DE2AB247A7008F92D2 /* SwiftUIWithCommentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29DD2AB247A7008F92D2 /* SwiftUIWithCommentsUITests.swift */; };
 		BA4E29E02AB247A7008F92D2 /* SwiftUIWithCommentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29DF2AB247A7008F92D2 /* SwiftUIWithCommentsUITestsLaunchTests.swift */; };
+		BA4E29EE2AB2492D008F92D2 /* LongPressGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29ED2AB2492D008F92D2 /* LongPressGesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		BA4E29D92AB247A7008F92D2 /* SwiftUIWithCommentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIWithCommentsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4E29DD2AB247A7008F92D2 /* SwiftUIWithCommentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIWithCommentsUITests.swift; sourceTree = "<group>"; };
 		BA4E29DF2AB247A7008F92D2 /* SwiftUIWithCommentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIWithCommentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BA4E29ED2AB2492D008F92D2 /* LongPressGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressGesture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		BA4E29C12AB247A6008F92D2 /* SwiftUIWithComments */ = {
 			isa = PBXGroup;
 			children = (
+				BA4E29EC2AB247CC008F92D2 /* IntermediateLevel */,
 				BA4E29C22AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift */,
 				BA4E29C42AB247A6008F92D2 /* ContentView.swift */,
 				BA4E29C62AB247A7008F92D2 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				BA4E29DF2AB247A7008F92D2 /* SwiftUIWithCommentsUITestsLaunchTests.swift */,
 			);
 			path = SwiftUIWithCommentsUITests;
+			sourceTree = "<group>";
+		};
+		BA4E29EC2AB247CC008F92D2 /* IntermediateLevel */ = {
+			isa = PBXGroup;
+			children = (
+				BA4E29ED2AB2492D008F92D2 /* LongPressGesture.swift */,
+			);
+			path = IntermediateLevel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 			files = (
 				BA4E29C52AB247A6008F92D2 /* ContentView.swift in Sources */,
 				BA4E29C32AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift in Sources */,
+				BA4E29EE2AB2492D008F92D2 /* LongPressGesture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +437,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,6 +467,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
