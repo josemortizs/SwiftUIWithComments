@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA3D804C2AB37CF800C48908 /* MagnificationGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D804B2AB37CF800C48908 /* MagnificationGesture.swift */; };
 		BA4E29C32AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29C22AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift */; };
 		BA4E29C52AB247A6008F92D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29C42AB247A6008F92D2 /* ContentView.swift */; };
 		BA4E29C72AB247A7008F92D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4E29C62AB247A7008F92D2 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA3D804B2AB37CF800C48908 /* MagnificationGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnificationGesture.swift; sourceTree = "<group>"; };
 		BA4E29BF2AB247A6008F92D2 /* SwiftUIWithComments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIWithComments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4E29C22AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIWithCommentsApp.swift; sourceTree = "<group>"; };
 		BA4E29C42AB247A6008F92D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4E29ED2AB2492D008F92D2 /* LongPressGesture.swift */,
+				BA3D804B2AB37CF800C48908 /* MagnificationGesture.swift */,
 			);
 			path = IntermediateLevel;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA4E29C52AB247A6008F92D2 /* ContentView.swift in Sources */,
+				BA3D804C2AB37CF800C48908 /* MagnificationGesture.swift in Sources */,
 				BA4E29C32AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift in Sources */,
 				BA4E29EE2AB2492D008F92D2 /* LongPressGesture.swift in Sources */,
 			);
