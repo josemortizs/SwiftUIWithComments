@@ -16,6 +16,7 @@
 		BA4E29DE2AB247A7008F92D2 /* SwiftUIWithCommentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29DD2AB247A7008F92D2 /* SwiftUIWithCommentsUITests.swift */; };
 		BA4E29E02AB247A7008F92D2 /* SwiftUIWithCommentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29DF2AB247A7008F92D2 /* SwiftUIWithCommentsUITestsLaunchTests.swift */; };
 		BA4E29EE2AB2492D008F92D2 /* LongPressGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29ED2AB2492D008F92D2 /* LongPressGesture.swift */; };
+		BA70B8F92AB8B24800E3DCE3 /* RotationGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA70B8F82AB8B24800E3DCE3 /* RotationGesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		BA4E29DD2AB247A7008F92D2 /* SwiftUIWithCommentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIWithCommentsUITests.swift; sourceTree = "<group>"; };
 		BA4E29DF2AB247A7008F92D2 /* SwiftUIWithCommentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIWithCommentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BA4E29ED2AB2492D008F92D2 /* LongPressGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressGesture.swift; sourceTree = "<group>"; };
+		BA70B8F82AB8B24800E3DCE3 /* RotationGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGesture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				BA4E29ED2AB2492D008F92D2 /* LongPressGesture.swift */,
 				BA3D804B2AB37CF800C48908 /* MagnificationGesture.swift */,
+				BA70B8F82AB8B24800E3DCE3 /* RotationGesture.swift */,
 			);
 			path = IntermediateLevel;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				BA4E29C52AB247A6008F92D2 /* ContentView.swift in Sources */,
 				BA3D804C2AB37CF800C48908 /* MagnificationGesture.swift in Sources */,
+				BA70B8F92AB8B24800E3DCE3 /* RotationGesture.swift in Sources */,
 				BA4E29C32AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift in Sources */,
 				BA4E29EE2AB2492D008F92D2 /* LongPressGesture.swift in Sources */,
 			);
