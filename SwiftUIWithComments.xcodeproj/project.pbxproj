@@ -18,6 +18,7 @@
 		BA4E29E02AB247A7008F92D2 /* SwiftUIWithCommentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29DF2AB247A7008F92D2 /* SwiftUIWithCommentsUITestsLaunchTests.swift */; };
 		BA4E29EE2AB2492D008F92D2 /* LongPressGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29ED2AB2492D008F92D2 /* LongPressGesture.swift */; };
 		BA70B8F92AB8B24800E3DCE3 /* RotationGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA70B8F82AB8B24800E3DCE3 /* RotationGesture.swift */; };
+		BA726F332AC1F798009FA0C7 /* CollapsableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA726F322AC1F798009FA0C7 /* CollapsableHeaderView.swift */; };
 		BAF858F92AB8B87300F3EE4F /* DragGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF858F82AB8B87300F3EE4F /* DragGesture.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		BA4E29DF2AB247A7008F92D2 /* SwiftUIWithCommentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIWithCommentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BA4E29ED2AB2492D008F92D2 /* LongPressGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressGesture.swift; sourceTree = "<group>"; };
 		BA70B8F82AB8B24800E3DCE3 /* RotationGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGesture.swift; sourceTree = "<group>"; };
+		BA726F322AC1F798009FA0C7 /* CollapsableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderView.swift; sourceTree = "<group>"; };
 		BAF858F82AB8B87300F3EE4F /* DragGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGesture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 		BA4E29C12AB247A6008F92D2 /* SwiftUIWithComments */ = {
 			isa = PBXGroup;
 			children = (
+				BA726F302AC1F6BD009FA0C7 /* AdvancedLevel */,
 				BA4E29EC2AB247CC008F92D2 /* IntermediateLevel */,
 				BA4E29C22AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift */,
 				BA4E29C42AB247A6008F92D2 /* ContentView.swift */,
@@ -156,6 +159,22 @@
 				BA70B8F82AB8B24800E3DCE3 /* RotationGesture.swift */,
 			);
 			path = IntermediateLevel;
+			sourceTree = "<group>";
+		};
+		BA726F302AC1F6BD009FA0C7 /* AdvancedLevel */ = {
+			isa = PBXGroup;
+			children = (
+				BA726F312AC1F6D9009FA0C7 /* CollapsableHeader */,
+			);
+			path = AdvancedLevel;
+			sourceTree = "<group>";
+		};
+		BA726F312AC1F6D9009FA0C7 /* CollapsableHeader */ = {
+			isa = PBXGroup;
+			children = (
+				BA726F322AC1F798009FA0C7 /* CollapsableHeaderView.swift */,
+			);
+			path = CollapsableHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +311,7 @@
 				BA3D804C2AB37CF800C48908 /* MagnificationGesture.swift in Sources */,
 				BA2DC9F32ABA10CB006ECBFC /* DragGesture2.swift in Sources */,
 				BA70B8F92AB8B24800E3DCE3 /* RotationGesture.swift in Sources */,
+				BA726F332AC1F798009FA0C7 /* CollapsableHeaderView.swift in Sources */,
 				BA4E29C32AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift in Sources */,
 				BA4E29EE2AB2492D008F92D2 /* LongPressGesture.swift in Sources */,
 				BAF858F92AB8B87300F3EE4F /* DragGesture.swift in Sources */,
