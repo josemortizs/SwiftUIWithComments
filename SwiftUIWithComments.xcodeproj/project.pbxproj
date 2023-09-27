@@ -19,6 +19,9 @@
 		BA4E29EE2AB2492D008F92D2 /* LongPressGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29ED2AB2492D008F92D2 /* LongPressGesture.swift */; };
 		BA70B8F92AB8B24800E3DCE3 /* RotationGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA70B8F82AB8B24800E3DCE3 /* RotationGesture.swift */; };
 		BA726F332AC1F798009FA0C7 /* CollapsableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA726F322AC1F798009FA0C7 /* CollapsableHeaderView.swift */; };
+		BADD9CC02AC49ABC00D34361 /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD9CBF2AC49ABC00D34361 /* CustomCorner.swift */; };
+		BADD9CC22AC49E3F00D34361 /* OffsetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD9CC12AC49E3F00D34361 /* OffsetModifier.swift */; };
+		BADD9CC42AC4AAD100D34361 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD9CC32AC4AAD100D34361 /* Chapter.swift */; };
 		BAF858F92AB8B87300F3EE4F /* DragGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF858F82AB8B87300F3EE4F /* DragGesture.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,9 @@
 		BA4E29ED2AB2492D008F92D2 /* LongPressGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressGesture.swift; sourceTree = "<group>"; };
 		BA70B8F82AB8B24800E3DCE3 /* RotationGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGesture.swift; sourceTree = "<group>"; };
 		BA726F322AC1F798009FA0C7 /* CollapsableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderView.swift; sourceTree = "<group>"; };
+		BADD9CBF2AC49ABC00D34361 /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
+		BADD9CC12AC49E3F00D34361 /* OffsetModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetModifier.swift; sourceTree = "<group>"; };
+		BADD9CC32AC4AAD100D34361 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		BAF858F82AB8B87300F3EE4F /* DragGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGesture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +179,9 @@
 			isa = PBXGroup;
 			children = (
 				BA726F322AC1F798009FA0C7 /* CollapsableHeaderView.swift */,
+				BADD9CBF2AC49ABC00D34361 /* CustomCorner.swift */,
+				BADD9CC12AC49E3F00D34361 /* OffsetModifier.swift */,
+				BADD9CC32AC4AAD100D34361 /* Chapter.swift */,
 			);
 			path = CollapsableHeader;
 			sourceTree = "<group>";
@@ -310,11 +319,14 @@
 				BA4E29C52AB247A6008F92D2 /* ContentView.swift in Sources */,
 				BA3D804C2AB37CF800C48908 /* MagnificationGesture.swift in Sources */,
 				BA2DC9F32ABA10CB006ECBFC /* DragGesture2.swift in Sources */,
+				BADD9CC02AC49ABC00D34361 /* CustomCorner.swift in Sources */,
 				BA70B8F92AB8B24800E3DCE3 /* RotationGesture.swift in Sources */,
 				BA726F332AC1F798009FA0C7 /* CollapsableHeaderView.swift in Sources */,
 				BA4E29C32AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift in Sources */,
+				BADD9CC22AC49E3F00D34361 /* OffsetModifier.swift in Sources */,
 				BA4E29EE2AB2492D008F92D2 /* LongPressGesture.swift in Sources */,
 				BAF858F92AB8B87300F3EE4F /* DragGesture.swift in Sources */,
+				BADD9CC42AC4AAD100D34361 /* Chapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
