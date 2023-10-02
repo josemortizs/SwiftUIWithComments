@@ -40,13 +40,14 @@ struct ChapterCardView: View {
                 .foregroundColor(chapter.color)
                 .padding(.horizontal)
             
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .center, spacing: 10) {
                 Text(chapter.title)
                     .font(.title)
                     .foregroundColor(.white)
                 
                 Text(chapter.description)
                     .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
             }
             .padding(.horizontal)
         }

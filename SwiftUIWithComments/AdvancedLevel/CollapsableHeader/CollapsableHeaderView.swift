@@ -4,34 +4,10 @@
 //
 //  Created by Jose Manuel Ortiz Sanchez on 25/9/23.
 //
-// origin: https://youtu.be/hmifqxD7seI?si=QAx_8QOlGBiNU70j&t=123
-// origin: https://youtu.be/hmifqxD7seI?si=68FKU81ExVMxhQuL&t=194
-// origin: https://youtu.be/hmifqxD7seI?si=kKe2uwSq8tSlU88X&t=481
+// origin: https://youtu.be/hmifqxD7seI?si=xX4NTyKyl77hNn-o
 
 
 import SwiftUI
-
-struct CornerRadiusInfo {
-    /// Corners where to apply the radius: .bottomRight, .allCorners...
-    var corners: UIRectCorner = []
-    /// Amount of radius to apply to the corner
-    var radius: CGFloat = 0
-}
-
-struct CollapsableHeaderInfo {
-    /// Safe area in top edges
-    var safeAreaTop: CGFloat
-    /// Maximum height of fully expanded header
-    var heightHeaderExpanded: CGFloat
-    /// Height of small header
-    var heightSmallHeader: CGFloat
-    /// Background color for the expanded header view
-    var backgroundHaeaderExpanded: Color
-    /// Spacing to be applied to vertical stacks
-    var spacing: CGFloat
-    /// Corner info
-    var cornerRadius: CornerRadiusInfo
-}
 
 struct CollapsableHeaderView<Header: View, SmallHeader: View, Content: View>: View {
     
@@ -67,27 +43,32 @@ struct CollapsableHeaderView<Header: View, SmallHeader: View, Content: View>: Vi
                     header()
                         .frame(maxWidth: .infinity)
                         .frame(
-                            height: info.heightHeaderExpanded + offset,
+                            height: getHeaderHeight(),
                             alignment: .bottom
                         )
+                        .opacity(getHeaderExpandedOpacity())
                         .background(
                             info.backgroundHaeaderExpanded
                             , in: CustomCorner(
                                 corners: info.cornerRadius.corners,
-                                radius: info.cornerRadius.radius
+                                radius: getCornerRadius()
                             )
                         )
                         .overlay(
                             smallHeader()
                                 .padding(.horizontal)
-                                .frame(height: info.heightSmallHeader + info.safeAreaTop)
+                                .frame(height: info.heightSmallHeader)
+                                .padding(.top, info.safeAreaTop)
+                                .opacity(getHeaderSmallOpacity())
                             , alignment: .top
                         )
                 }
                 .frame(height: info.heightHeaderExpanded)
                 .offset(y: -offset)
+                .zIndex(1)
                 
                content()
+                    .zIndex(0)
                 
             }
             .modifier(OffsetModifier(offset: $offset, named: coordinateSpaceName))
@@ -97,92 +78,29 @@ struct CollapsableHeaderView<Header: View, SmallHeader: View, Content: View>: Vi
     }
 }
 
-struct CollapsableHeaderExampleView: View {
+extension CollapsableHeaderView {
     
-    let spacingVStackHeader: CGFloat = 15
-    
-    var body: some View {
-        GeometryReader { proxy in
-            
-            let heightHeaderExpanded = UIScreen.main.bounds.height / 2.8
-            let info = CollapsableHeaderInfo(
-                safeAreaTop: proxy.safeAreaInsets.top,
-                heightHeaderExpanded: heightHeaderExpanded, 
-                heightSmallHeader: 80,
-                backgroundHaeaderExpanded: .yellow,
-                spacing: spacingVStackHeader,
-                cornerRadius: CornerRadiusInfo(
-                    corners: [.bottomLeft, .bottomRight],
-                    radius: 30
-                )
-            )
-            
-            CollapsableHeaderView(info: info) {
-                headerExpandedView
-            } smallHeader: {
-                smallHeaderView
-            } content: {
-                contentView
-            }
-
-        }
+    func getHeaderHeight() -> CGFloat {
+        let headerHeight = info.heightHeaderExpanded + offset
+        return headerHeight > (info.heightSmallHeader + info.safeAreaTop) ? headerHeight : (info.heightSmallHeader + info.safeAreaTop)
     }
     
-    var contentView: some View {
-        VStack {
-            ForEach(chaptersSwiftBook) { chapter in
-                ChapterCardView(chapter: chapter)
-            }
-        }
-        
+    func getHeaderExpandedOpacity() -> CGFloat {
+        let progress = -offset / info.scrollNecessaryUntilTheEffectStart
+        let opacity = 1 - progress
+        return offset < 0 ? opacity : 1
     }
     
-    var smallHeaderView: some View {
-        HStack(alignment: .center) {
-            Image("logo")
-                .resizable()
-                .frame(width: 36, height: 36)
-                .background(Color.white)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.white, lineWidth: 1))
-            
-            Text("Swift, open source language")
-                .foregroundColor(.white)
-                .font(.system(size: 16, weight: .bold))
-            
-            Spacer()
-        }
-        .padding(.top)
+    func getHeaderSmallOpacity() -> CGFloat {
+        let opacity = -(offset + info.scrollNecessaryUntilTheEffectStart) / (info.heightHeaderExpanded - (info.heightSmallHeader + info.safeAreaTop))
+        return opacity
     }
     
-    var headerExpandedView: some View {
-        VStack(alignment: .leading, spacing: spacingVStackHeader) {
-            
-            HStack(alignment: .center) {
-                Image("logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 80, height: 80)
-                    .cornerRadius(20)
-                Text("Swift")
-                    .font(.largeTitle.bold())
-                    .padding(.leading)
-                Spacer()
-            }
-
-            Text("Swift es un lenguaje de programación multiparadigma creado por Apple enfocado en el desarrollo de aplicaciones para iOS y macOS. Fue presentado en la WWDC 2014")
-                .fontWeight(.semibold)
-                .foregroundColor(Color.white.opacity(0.8))
-        }
-        .foregroundColor(.white)
-        .padding(.horizontal)
-        .padding(.bottom)
-    }
-}
-
-struct CollapsableHeaderExampleView_Previews: PreviewProvider {
-    static var previews: some View {
-        CollapsableHeaderExampleView()
+    func getCornerRadius() -> CGFloat {
+        let progress = -offset / (info.heightHeaderExpanded - (info.heightSmallHeader + info.safeAreaTop))
+        let value = 1 - progress
+        let radius = value * info.cornerRadius.radius
+        return offset < 0 ? radius : info.cornerRadius.radius
     }
 }
 
