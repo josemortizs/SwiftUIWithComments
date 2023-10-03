@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA06A7FB2ACC877900317B7E /* ScrollViewReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06A7FA2ACC877900317B7E /* ScrollViewReader.swift */; };
+		BA06A8012ACC91AB00317B7E /* GeometryReaderExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06A8002ACC91AB00317B7E /* GeometryReaderExample.swift */; };
 		BA2CD1E92ACB356000A4415C /* CollapsableHeaderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2CD1E82ACB356000A4415C /* CollapsableHeaderInfo.swift */; };
 		BA2CD1EB2ACB364000A4415C /* CollapsableHeaderExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2CD1EA2ACB364000A4415C /* CollapsableHeaderExampleView.swift */; };
 		BA2DC9F32ABA10CB006ECBFC /* DragGesture2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2DC9F22ABA10CB006ECBFC /* DragGesture2.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		BA06A7FA2ACC877900317B7E /* ScrollViewReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewReader.swift; sourceTree = "<group>"; };
+		BA06A8002ACC91AB00317B7E /* GeometryReaderExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderExample.swift; sourceTree = "<group>"; };
 		BA2CD1E82ACB356000A4415C /* CollapsableHeaderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderInfo.swift; sourceTree = "<group>"; };
 		BA2CD1EA2ACB364000A4415C /* CollapsableHeaderExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderExampleView.swift; sourceTree = "<group>"; };
 		BA2DC9F22ABA10CB006ECBFC /* DragGesture2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGesture2.swift; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA06A7FF2ACC918400317B7E /* GeometryReaderUses */ = {
+			isa = PBXGroup;
+			children = (
+				BA06A8002ACC91AB00317B7E /* GeometryReaderExample.swift */,
+			);
+			path = GeometryReaderUses;
+			sourceTree = "<group>";
+		};
 		BA2DC9F12ABA10B1006ECBFC /* DragGesture */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +187,7 @@
 		BA726F302AC1F6BD009FA0C7 /* AdvancedLevel */ = {
 			isa = PBXGroup;
 			children = (
+				BA06A7FF2ACC918400317B7E /* GeometryReaderUses */,
 				BA726F312AC1F6D9009FA0C7 /* CollapsableHeader */,
 			);
 			path = AdvancedLevel;
@@ -333,6 +344,7 @@
 				BA70B8F92AB8B24800E3DCE3 /* RotationGesture.swift in Sources */,
 				BA2CD1EB2ACB364000A4415C /* CollapsableHeaderExampleView.swift in Sources */,
 				BA2CD1E92ACB356000A4415C /* CollapsableHeaderInfo.swift in Sources */,
+				BA06A8012ACC91AB00317B7E /* GeometryReaderExample.swift in Sources */,
 				BA726F332AC1F798009FA0C7 /* CollapsableHeaderView.swift in Sources */,
 				BA4E29C32AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift in Sources */,
 				BADD9CC22AC49E3F00D34361 /* OffsetModifier.swift in Sources */,
