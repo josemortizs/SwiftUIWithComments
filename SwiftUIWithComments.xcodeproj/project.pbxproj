@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA06A7FB2ACC877900317B7E /* ScrollViewReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06A7FA2ACC877900317B7E /* ScrollViewReader.swift */; };
 		BA2CD1E92ACB356000A4415C /* CollapsableHeaderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2CD1E82ACB356000A4415C /* CollapsableHeaderInfo.swift */; };
 		BA2CD1EB2ACB364000A4415C /* CollapsableHeaderExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2CD1EA2ACB364000A4415C /* CollapsableHeaderExampleView.swift */; };
 		BA2DC9F32ABA10CB006ECBFC /* DragGesture2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2DC9F22ABA10CB006ECBFC /* DragGesture2.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA06A7FA2ACC877900317B7E /* ScrollViewReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewReader.swift; sourceTree = "<group>"; };
 		BA2CD1E82ACB356000A4415C /* CollapsableHeaderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderInfo.swift; sourceTree = "<group>"; };
 		BA2CD1EA2ACB364000A4415C /* CollapsableHeaderExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderExampleView.swift; sourceTree = "<group>"; };
 		BA2DC9F22ABA10CB006ECBFC /* DragGesture2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGesture2.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				BA4E29ED2AB2492D008F92D2 /* LongPressGesture.swift */,
 				BA3D804B2AB37CF800C48908 /* MagnificationGesture.swift */,
 				BA70B8F82AB8B24800E3DCE3 /* RotationGesture.swift */,
+				BA06A7FA2ACC877900317B7E /* ScrollViewReader.swift */,
 			);
 			path = IntermediateLevel;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				BA3D804C2AB37CF800C48908 /* MagnificationGesture.swift in Sources */,
 				BA2DC9F32ABA10CB006ECBFC /* DragGesture2.swift in Sources */,
 				BADD9CC02AC49ABC00D34361 /* CustomCorner.swift in Sources */,
+				BA06A7FB2ACC877900317B7E /* ScrollViewReader.swift in Sources */,
 				BA70B8F92AB8B24800E3DCE3 /* RotationGesture.swift in Sources */,
 				BA2CD1EB2ACB364000A4415C /* CollapsableHeaderExampleView.swift in Sources */,
 				BA2CD1E92ACB356000A4415C /* CollapsableHeaderInfo.swift in Sources */,
