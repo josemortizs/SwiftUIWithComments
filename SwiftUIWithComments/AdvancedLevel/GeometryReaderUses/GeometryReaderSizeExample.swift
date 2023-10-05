@@ -1,5 +1,5 @@
 //
-//  GeometryReaderExample.swift
+//  GeometryReaderSizeExample.swift
 //  SwiftUIWithComments
 //
 //  Created by Jose Manuel Ortiz Sanchez on 3/10/23.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct GeometryReaderExample: View {
+struct GeometryReaderSizeExample: View {
     var body: some View {
         Text("Hello, World!")
             .readSize { size in
@@ -17,9 +17,7 @@ struct GeometryReaderExample: View {
     }
 }
 
-#Preview {
-    GeometryReaderExample()
-}
+
 
 /*  --------------------------------------------------------------
     With this view extension we can get the size of any child view
@@ -41,4 +39,8 @@ extension View {
 struct SizePreferenceKey: PreferenceKey {
   static var defaultValue: CGSize = .zero
   static func reduce(value: inout CGSize, nextValue: () -> CGSize) {}
+}
+
+#Preview {
+    GeometryReaderSizeExample()
 }
