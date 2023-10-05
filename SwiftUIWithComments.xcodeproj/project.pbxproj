@@ -16,6 +16,7 @@
 		BA3D804C2AB37CF800C48908 /* MagnificationGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D804B2AB37CF800C48908 /* MagnificationGesture.swift */; };
 		BA465CC52ACF233900FCC6AC /* MultiplesSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA465CC42ACF233900FCC6AC /* MultiplesSheets.swift */; };
 		BA465CC72ACF2C3F00FCC6AC /* GeometryReaderOffsetExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA465CC62ACF2C3F00FCC6AC /* GeometryReaderOffsetExample.swift */; };
+		BA465CC92ACF358300FCC6AC /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA465CC82ACF358300FCC6AC /* ScrollViewOffset.swift */; };
 		BA4E29C32AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29C22AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift */; };
 		BA4E29C52AB247A6008F92D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4E29C42AB247A6008F92D2 /* ContentView.swift */; };
 		BA4E29C72AB247A7008F92D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4E29C62AB247A7008F92D2 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		BA3D804B2AB37CF800C48908 /* MagnificationGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnificationGesture.swift; sourceTree = "<group>"; };
 		BA465CC42ACF233900FCC6AC /* MultiplesSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplesSheets.swift; sourceTree = "<group>"; };
 		BA465CC62ACF2C3F00FCC6AC /* GeometryReaderOffsetExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderOffsetExample.swift; sourceTree = "<group>"; };
+		BA465CC82ACF358300FCC6AC /* ScrollViewOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewOffset.swift; sourceTree = "<group>"; };
 		BA4E29BF2AB247A6008F92D2 /* SwiftUIWithComments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIWithComments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4E29C22AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIWithCommentsApp.swift; sourceTree = "<group>"; };
 		BA4E29C42AB247A6008F92D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				BA06A8002ACC91AB00317B7E /* GeometryReaderSizeExample.swift */,
 				BA465CC62ACF2C3F00FCC6AC /* GeometryReaderOffsetExample.swift */,
+				BA465CC82ACF358300FCC6AC /* ScrollViewOffset.swift */,
 			);
 			path = GeometryReaderUses;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				BA2CD1E92ACB356000A4415C /* CollapsableHeaderInfo.swift in Sources */,
 				BA06A8012ACC91AB00317B7E /* GeometryReaderSizeExample.swift in Sources */,
 				BA726F332AC1F798009FA0C7 /* CollapsableHeaderView.swift in Sources */,
+				BA465CC92ACF358300FCC6AC /* ScrollViewOffset.swift in Sources */,
 				BA4E29C32AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift in Sources */,
 				BADD9CC22AC49E3F00D34361 /* OffsetModifier.swift in Sources */,
 				BA4E29EE2AB2492D008F92D2 /* LongPressGesture.swift in Sources */,
