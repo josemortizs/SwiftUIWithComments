@@ -17,8 +17,6 @@ struct GeometryReaderSizeExample: View {
     }
 }
 
-
-
 /*  --------------------------------------------------------------
     With this view extension we can get the size of any child view
     by using a simple view modifier.
