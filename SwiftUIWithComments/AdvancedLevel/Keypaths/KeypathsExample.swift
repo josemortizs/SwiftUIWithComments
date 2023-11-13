@@ -17,9 +17,35 @@ struct MyDataModel {
 
 extension Array where Element == MyDataModel {
     
-    func customSorted() -> [MyDataModel] {
+    func customSorted() -> [Element] {
         self.sorted { item1, item2 in
             item1.count < item2.count
+        }
+    }
+    
+    func customSortedKeypath(keyPath: KeyPath<MyDataModel, Int>) -> [Element] {
+        self.sorted { item1, item2 in
+            item1[keyPath: keyPath] < item2[keyPath: keyPath]
+        }
+    }
+    
+    func customSortedMoreGeneric<T: Comparable>(keyPath: KeyPath<MyDataModel, T>) -> [Element] {
+        self.sorted { item1, item2 in
+            item1[keyPath: keyPath] < item2[keyPath: keyPath]
+        }
+    }
+}
+
+extension Array {
+    
+    func sortedByKeyPath<T: Comparable>(_ keyPath: KeyPath<Element, T>, ascending: Bool = true) -> [Element] {
+        self.sorted { item1, item2 in
+            let value1 = item1[keyPath: keyPath]
+            let value2 = item2[keyPath: keyPath]
+            
+            return ascending
+            ? value1 < value2
+            : value1 > value2
         }
     }
 }
@@ -42,6 +68,7 @@ struct KeypathsExample: View {
             }
         }
         .onAppear(perform: {
+            
             let array = [
                 MyDataModel(title: "Three", count: 3, date: .distantFuture),
                 MyDataModel(title: "One", count: 1, date: .now),
@@ -49,8 +76,11 @@ struct KeypathsExample: View {
             ]
             
             let newArray = array.customSorted()
+            let otherArray = array.customSortedKeypath(keyPath: \.count)
+            let arraySortedByDate = array.customSortedMoreGeneric(keyPath: \.date)
+            let arraySortedGeneric = array.sortedByKeyPath(\.title)
             
-            dataArray = newArray
+            dataArray = arraySortedGeneric
         })
     }
 }
