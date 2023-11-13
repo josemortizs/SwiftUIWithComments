@@ -30,6 +30,7 @@
 		BA93A54C2ACDDAD000BC7098 /* GeometryRead2Examp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93A54B2ACDDAD000BC7098 /* GeometryRead2Examp.swift */; };
 		BA93A54E2ACDE18600BC7098 /* GeometryRead3Examp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93A54D2ACDE18600BC7098 /* GeometryRead3Examp.swift */; };
 		BA957B852AF962DD00ACF625 /* ErrorAlertExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA957B842AF962DD00ACF625 /* ErrorAlertExample.swift */; };
+		BACE57F82B02890D000E8BD3 /* KeypathsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE57F72B02890D000E8BD3 /* KeypathsExample.swift */; };
 		BADD9CC02AC49ABC00D34361 /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD9CBF2AC49ABC00D34361 /* CustomCorner.swift */; };
 		BADD9CC22AC49E3F00D34361 /* OffsetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD9CC12AC49E3F00D34361 /* OffsetModifier.swift */; };
 		BADD9CC42AC4AAD100D34361 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD9CC32AC4AAD100D34361 /* Chapter.swift */; };
@@ -81,6 +82,7 @@
 		BA93A54B2ACDDAD000BC7098 /* GeometryRead2Examp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryRead2Examp.swift; sourceTree = "<group>"; };
 		BA93A54D2ACDE18600BC7098 /* GeometryRead3Examp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryRead3Examp.swift; sourceTree = "<group>"; };
 		BA957B842AF962DD00ACF625 /* ErrorAlertExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertExample.swift; sourceTree = "<group>"; };
+		BACE57F72B02890D000E8BD3 /* KeypathsExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypathsExample.swift; sourceTree = "<group>"; };
 		BADD9CBF2AC49ABC00D34361 /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 		BADD9CC12AC49E3F00D34361 /* OffsetModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetModifier.swift; sourceTree = "<group>"; };
 		BADD9CC32AC4AAD100D34361 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		BA726F302AC1F6BD009FA0C7 /* AdvancedLevel */ = {
 			isa = PBXGroup;
 			children = (
+				BACE57F62B0288E3000E8BD3 /* Keypaths */,
 				BAE4894E2AF01E13009303B7 /* CustomBindings */,
 				BA06A7FF2ACC918400317B7E /* GeometryReaderUses */,
 				BA726F312AC1F6D9009FA0C7 /* CollapsableHeader */,
@@ -235,6 +238,14 @@
 				BA93A54D2ACDE18600BC7098 /* GeometryRead3Examp.swift */,
 			);
 			path = GeometryReader;
+			sourceTree = "<group>";
+		};
+		BACE57F62B0288E3000E8BD3 /* Keypaths */ = {
+			isa = PBXGroup;
+			children = (
+				BACE57F72B02890D000E8BD3 /* KeypathsExample.swift */,
+			);
+			path = Keypaths;
 			sourceTree = "<group>";
 		};
 		BAE4894E2AF01E13009303B7 /* CustomBindings */ = {
@@ -397,6 +408,7 @@
 				BA4E29EE2AB2492D008F92D2 /* LongPressGesture.swift in Sources */,
 				BAF858F92AB8B87300F3EE4F /* DragGesture.swift in Sources */,
 				BA465CC52ACF233900FCC6AC /* MultiplesSheets.swift in Sources */,
+				BACE57F82B02890D000E8BD3 /* KeypathsExample.swift in Sources */,
 				BA1762F62ACDD2D000CA852B /* GeometryReader.swift in Sources */,
 				BADD9CC42AC4AAD100D34361 /* Chapter.swift in Sources */,
 			);
