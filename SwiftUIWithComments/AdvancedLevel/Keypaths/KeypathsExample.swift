@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// Structure created to illustrate the example
 struct MyDataModel {
     let id = UUID().uuidString
     let title: String
@@ -15,6 +16,12 @@ struct MyDataModel {
     let date: Date
 }
 
+/*
+    With this extension we have an approach to how we could create our own
+    custom functions to sort an array, in this case of the MyDataModel type.
+    Obviously this first extension is very little useful as it is coupled
+    to the MyDataModel data model...
+ */
 extension Array where Element == MyDataModel {
     
     func customSorted() -> [Element] {
@@ -36,10 +43,26 @@ extension Array where Element == MyDataModel {
     }
 }
 
+/*
+    This other extension would already be usable in any project, since it works
+    on generic data whose only requirement is that its keypaths be of
+    a "Comparable" data type
+ */
 extension Array {
     
     func sortedByKeyPath<T: Comparable>(_ keyPath: KeyPath<Element, T>, ascending: Bool = true) -> [Element] {
         self.sorted { item1, item2 in
+            let value1 = item1[keyPath: keyPath]
+            let value2 = item2[keyPath: keyPath]
+            
+            return ascending
+            ? value1 < value2
+            : value1 > value2
+        }
+    }
+    
+    mutating func sortByKeyPath<T: Comparable>(_ keyPath: KeyPath<Element, T>, ascending: Bool = true) {
+        self.sort { item1, item2 in
             let value1 = item1[keyPath: keyPath]
             let value2 = item2[keyPath: keyPath]
             
@@ -69,18 +92,27 @@ struct KeypathsExample: View {
         }
         .onAppear(perform: {
             
+            /*
+                Some examples of use of each of the functions created in the
+                extensions, so that you can see the progression and how their
+                use is becoming increasingly generic.
+             */
+            
             let array = [
                 MyDataModel(title: "Three", count: 3, date: .distantFuture),
                 MyDataModel(title: "One", count: 1, date: .now),
                 MyDataModel(title: "Two", count: 2, date: .distantPast)
             ]
             
-            let newArray = array.customSorted()
-            let otherArray = array.customSortedKeypath(keyPath: \.count)
-            let arraySortedByDate = array.customSortedMoreGeneric(keyPath: \.date)
-            let arraySortedGeneric = array.sortedByKeyPath(\.title)
+            _ = array.customSorted()
+            _ = array.customSortedKeypath(keyPath: \.count)
+            _ = array.customSortedMoreGeneric(keyPath: \.date)
+            _ = array.sortedByKeyPath(\.title)
             
-            dataArray = arraySortedGeneric
+            var exampleSort = array
+            exampleSort.sortByKeyPath(\.date)
+            
+            dataArray = exampleSort
         })
     }
 }
