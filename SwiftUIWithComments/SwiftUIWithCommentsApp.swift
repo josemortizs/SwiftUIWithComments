@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUIWithCommentsApp: App {
     var body: some Scene {
         WindowGroup {
-            GeometryReaderOtherExample()
+            PropertyWrapperExample()
         }
     }
 }

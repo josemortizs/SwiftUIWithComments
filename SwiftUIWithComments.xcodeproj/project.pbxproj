@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA06A7FB2ACC877900317B7E /* ScrollViewReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06A7FA2ACC877900317B7E /* ScrollViewReader.swift */; };
 		BA06A8012ACC91AB00317B7E /* GeometryReaderSizeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06A8002ACC91AB00317B7E /* GeometryReaderSizeExample.swift */; };
+		BA1574242B0D5554000F0528 /* PropertyWrapperExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1574232B0D5554000F0528 /* PropertyWrapperExample.swift */; };
 		BA1762F62ACDD2D000CA852B /* GeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1762F52ACDD2D000CA852B /* GeometryReader.swift */; };
 		BA2CD1E92ACB356000A4415C /* CollapsableHeaderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2CD1E82ACB356000A4415C /* CollapsableHeaderInfo.swift */; };
 		BA2CD1EB2ACB364000A4415C /* CollapsableHeaderExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2CD1EA2ACB364000A4415C /* CollapsableHeaderExampleView.swift */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		BA06A7FA2ACC877900317B7E /* ScrollViewReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewReader.swift; sourceTree = "<group>"; };
 		BA06A8002ACC91AB00317B7E /* GeometryReaderSizeExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderSizeExample.swift; sourceTree = "<group>"; };
+		BA1574232B0D5554000F0528 /* PropertyWrapperExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapperExample.swift; sourceTree = "<group>"; };
 		BA1762F52ACDD2D000CA852B /* GeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader.swift; sourceTree = "<group>"; };
 		BA2CD1E82ACB356000A4415C /* CollapsableHeaderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderInfo.swift; sourceTree = "<group>"; };
 		BA2CD1EA2ACB364000A4415C /* CollapsableHeaderExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderExampleView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 				BA465CC82ACF358300FCC6AC /* ScrollViewOffset.swift */,
 			);
 			path = GeometryReaderUses;
+			sourceTree = "<group>";
+		};
+		BA1574222B0D5354000F0528 /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				BA1574232B0D5554000F0528 /* PropertyWrapperExample.swift */,
+			);
+			path = PropertyWrappers;
 			sourceTree = "<group>";
 		};
 		BA2DC9F12ABA10B1006ECBFC /* DragGesture */ = {
@@ -209,6 +219,7 @@
 		BA726F302AC1F6BD009FA0C7 /* AdvancedLevel */ = {
 			isa = PBXGroup;
 			children = (
+				BA1574222B0D5354000F0528 /* PropertyWrappers */,
 				BACE57F62B0288E3000E8BD3 /* Keypaths */,
 				BAE4894E2AF01E13009303B7 /* CustomBindings */,
 				BA06A7FF2ACC918400317B7E /* GeometryReaderUses */,
@@ -408,6 +419,7 @@
 				BA4E29EE2AB2492D008F92D2 /* LongPressGesture.swift in Sources */,
 				BAF858F92AB8B87300F3EE4F /* DragGesture.swift in Sources */,
 				BA465CC52ACF233900FCC6AC /* MultiplesSheets.swift in Sources */,
+				BA1574242B0D5554000F0528 /* PropertyWrapperExample.swift in Sources */,
 				BACE57F82B02890D000E8BD3 /* KeypathsExample.swift in Sources */,
 				BA1762F62ACDD2D000CA852B /* GeometryReader.swift in Sources */,
 				BADD9CC42AC4AAD100D34361 /* Chapter.swift in Sources */,
