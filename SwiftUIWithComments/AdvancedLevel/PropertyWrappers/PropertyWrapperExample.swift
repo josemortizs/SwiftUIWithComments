@@ -8,63 +8,70 @@
 
 import SwiftUI
 
-struct PropertyWrapperExample: View {
+@available(iOS 16.0, *)
+extension FileManager {
     
-    @State private var title: String = "Starting title"
-    
-    var body: some View {
-        VStack(spacing: 40) {
-            
-            Text(title).font(.largeTitle)
-            
-            Button("Click me 1") {
-                if #available(iOS 16.0, *) {
-                    setTitle(newValue: "title 1")
-                } else {
-                    // Fallback on earlier versions
-                }
-            }
-            
-            Button("Click me 2") {
-                if #available(iOS 16.0, *) {
-                    setTitle(newValue: "title 2")
-                } else {
-                    // Fallback on earlier versions
-                }
-            }
-        }
-        .onAppear(perform: {
-            
-        })
-    }
-    
-    @available(iOS 16.0, *)
-    private func setTitle(newValue: String) {
-        title = newValue.uppercased()
-        save(newValue: newValue)
-    }
-    
-    @available(iOS 16.0, *)
-    private var path: URL {
+    static func documentsPath() -> URL {
         FileManager.default
             .urls(for: .documentDirectory, in: .userDomainMask)
             .first!
             .appending(path: "custom_title.txt")
     }
+}
+
+@available(iOS 16.0, *)
+struct FileManagerProperty: DynamicProperty {
+    
+    @State var title: String
+    
+    init() {
+        do {
+            title = try String(contentsOf: FileManager.documentsPath())
+        } catch {
+            title = "Starting title"
+            print("error: \(error.localizedDescription)")
+        }
+    }
     
     @available(iOS 16.0, *)
-    private func save(newValue: String) {
+    func save(newValue: String) {
         do {
-            try newValue.write(to: path, atomically: false, encoding: .utf8)
-            print(NSHomeDirectory())
+            try newValue.write(to: FileManager.documentsPath(), atomically: false, encoding: .utf8)
+            title = newValue
             print("Success saved")
         } catch {
             print(error.localizedDescription)
         }
     }
+}
+
+@available(iOS 16.0, *)
+struct PropertyWrapperExample: View {
+        
+    var fileManagerProperty = FileManagerProperty()
     
+    var body: some View {
+        VStack(spacing: 40) {
+            
+            Text(fileManagerProperty.title).font(.largeTitle)
+            
+            Button("Click me 1") {
+                fileManagerProperty.save(newValue: "title 1")
+                print("Succes read")
+            }
+            
+            Button("Click me 2") {
+                fileManagerProperty.save(newValue: "title 2")
+                print("Succes read")
+            }
+        }
+    }
 }
 
 #Preview {
-    PropertyWrapperExample()
+    if #available(iOS 16.0, *) {
+        PropertyWrapperExample()
+    } else {
+        Text("iOS < 16.0...")
+    }
 }

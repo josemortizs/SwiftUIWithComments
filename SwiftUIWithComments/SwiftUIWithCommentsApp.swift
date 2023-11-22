@@ -11,7 +11,11 @@ import SwiftUI
 struct SwiftUIWithCommentsApp: App {
     var body: some Scene {
         WindowGroup {
-            PropertyWrapperExample()
+            if #available(iOS 16.0, *) {
+                PropertyWrapperExample()
+            } else {
+                Text("iOS < 16.0")
+            }
         }
     }
 }
