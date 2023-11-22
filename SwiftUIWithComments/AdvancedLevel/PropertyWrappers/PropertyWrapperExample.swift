@@ -4,7 +4,7 @@
 //
 //  Created by Jose Manuel Ortiz Sanchez on 21/11/23.
 //
-//  Origin: https://youtu.be/2wzq6SQkSJE?si=xh3AkmoPGCwPyE2n&t=898
+//  Origin: https://youtu.be/2wzq6SQkSJE?si=50CTDR6qYRqKcM-A&t=1975
 
 import SwiftUI
 
@@ -22,7 +22,11 @@ extension FileManager {
 @available(iOS 16.0, *)
 struct FileManagerProperty: DynamicProperty {
     
-    @State var title: String
+    @State private var title: String
+    
+    var currentValue: String {
+        title
+    }
     
     init() {
         do {
@@ -53,7 +57,7 @@ struct PropertyWrapperExample: View {
     var body: some View {
         VStack(spacing: 40) {
             
-            Text(fileManagerProperty.title).font(.largeTitle)
+            Text(fileManagerProperty.currentValue).font(.largeTitle)
             
             Button("Click me 1") {
                 fileManagerProperty.save(newValue: "title 1")
