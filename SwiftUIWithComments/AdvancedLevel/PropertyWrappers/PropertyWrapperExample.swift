@@ -11,28 +11,45 @@ import SwiftUI
 @available(iOS 16.0, *)
 extension FileManager {
     
-    static func documentsPath() -> URL {
+    static func documentsPath(key: String) -> URL {
         FileManager.default
             .urls(for: .documentDirectory, in: .userDomainMask)
             .first!
-            .appending(path: "custom_title.txt")
+            .appending(path: "\(key).txt")
     }
 }
 
 @available(iOS 16.0, *)
+@propertyWrapper
 struct FileManagerProperty: DynamicProperty {
     
-    @State private var title: String
+    @State private var string: String
+    let key: String
     
-    var currentValue: String {
-        title
+    var wrappedValue: String {
+        get {
+            string
+        }
+        nonmutating set {
+            save(newValue: newValue)
+        }
     }
     
-    init() {
+    var projectedValue: Binding<String> {
+        Binding {
+            wrappedValue
+        } set: { newValue in
+            wrappedValue = newValue
+        }
+
+    }
+    
+    init(wrappedValue: String, _ key: String) {
+        self.key = key
         do {
-            title = try String(contentsOf: FileManager.documentsPath())
+            string = try String(contentsOf: FileManager.documentsPath(key: key))
         } catch {
-            title = "Starting title"
+            string = wrappedValue
             print("error: \(error.localizedDescription)")
         }
     }
@@ -40,8 +57,8 @@ struct FileManagerProperty: DynamicProperty {
     @available(iOS 16.0, *)
     func save(newValue: String) {
         do {
-            try newValue.write(to: FileManager.documentsPath(), atomically: false, encoding: .utf8)
-            title = newValue
+            try newValue.write(to: FileManager.documentsPath(key: key), atomically: false, encoding: .utf8)
+            string = newValue
             print("Success saved")
         } catch {
             print(error.localizedDescription)
@@ -52,23 +69,42 @@ struct FileManagerProperty: DynamicProperty {
 @available(iOS 16.0, *)
 struct PropertyWrapperExample: View {
         
-    var fileManagerProperty = FileManagerProperty()
+    @FileManagerProperty("custom_title_1") private var title: String = ""
+    @FileManagerProperty("custom_title_2") private var title2: String = ""
+
+    @State private var subtitle: String = "Subtitel"
     
     var body: some View {
         VStack(spacing: 40) {
             
-            Text(fileManagerProperty.currentValue).font(.largeTitle)
+            Text(title).font(.largeTitle)
+            Text(title2).font(.largeTitle)
+
+            PropertyWrapperChildView(subtitle: $title)
             
             Button("Click me 1") {
-                fileManagerProperty.save(newValue: "title 1")
+                title = "title 1"
                 print("Succes read")
             }
             
             Button("Click me 2") {
-                fileManagerProperty.save(newValue: "title 2")
+                title = "title 2"
                 print("Succes read")
             }
         }
+    }
+}
+
+struct PropertyWrapperChildView: View {
+    
+    @Binding var subtitle: String
+    
+    var body: some View {
+        Button(action: {
+            subtitle = "Another title!!!"
+        }, label: {
+            Text(subtitle).font(.largeTitle)
+        })
     }
 }
 
