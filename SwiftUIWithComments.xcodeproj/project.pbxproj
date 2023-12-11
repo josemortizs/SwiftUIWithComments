@@ -36,6 +36,9 @@
 		BADD9CC22AC49E3F00D34361 /* OffsetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD9CC12AC49E3F00D34361 /* OffsetModifier.swift */; };
 		BADD9CC42AC4AAD100D34361 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD9CC32AC4AAD100D34361 /* Chapter.swift */; };
 		BAE489502AF01F93009303B7 /* CustomBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4894F2AF01F93009303B7 /* CustomBinding.swift */; };
+		BAEB028F2B277B4C002C1B56 /* PropertyWrappers2Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB028E2B277B4C002C1B56 /* PropertyWrappers2Example.swift */; };
+		BAEB02912B277FF4002C1B56 /* GenericFilePropertyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB02902B277FF4002C1B56 /* GenericFilePropertyManager.swift */; };
+		BAEB02932B27820A002C1B56 /* ExampleMVVMPropertyWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB02922B27820A002C1B56 /* ExampleMVVMPropertyWrappers.swift */; };
 		BAF858F92AB8B87300F3EE4F /* DragGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF858F82AB8B87300F3EE4F /* DragGesture.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +92,9 @@
 		BADD9CC12AC49E3F00D34361 /* OffsetModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetModifier.swift; sourceTree = "<group>"; };
 		BADD9CC32AC4AAD100D34361 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		BAE4894F2AF01F93009303B7 /* CustomBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBinding.swift; sourceTree = "<group>"; };
+		BAEB028E2B277B4C002C1B56 /* PropertyWrappers2Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrappers2Example.swift; sourceTree = "<group>"; };
+		BAEB02902B277FF4002C1B56 /* GenericFilePropertyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFilePropertyManager.swift; sourceTree = "<group>"; };
+		BAEB02922B27820A002C1B56 /* ExampleMVVMPropertyWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMVVMPropertyWrappers.swift; sourceTree = "<group>"; };
 		BAF858F82AB8B87300F3EE4F /* DragGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGesture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				BA1574232B0D5554000F0528 /* PropertyWrapperExample.swift */,
+				BAEB028E2B277B4C002C1B56 /* PropertyWrappers2Example.swift */,
+				BAEB02902B277FF4002C1B56 /* GenericFilePropertyManager.swift */,
+				BAEB02922B27820A002C1B56 /* ExampleMVVMPropertyWrappers.swift */,
 			);
 			path = PropertyWrappers;
 			sourceTree = "<group>";
@@ -414,10 +423,13 @@
 				BA465CC92ACF358300FCC6AC /* ScrollViewOffset.swift in Sources */,
 				BAE489502AF01F93009303B7 /* CustomBinding.swift in Sources */,
 				BA4E29C32AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift in Sources */,
+				BAEB02912B277FF4002C1B56 /* GenericFilePropertyManager.swift in Sources */,
+				BAEB02932B27820A002C1B56 /* ExampleMVVMPropertyWrappers.swift in Sources */,
 				BA957B852AF962DD00ACF625 /* ErrorAlertExample.swift in Sources */,
 				BADD9CC22AC49E3F00D34361 /* OffsetModifier.swift in Sources */,
 				BA4E29EE2AB2492D008F92D2 /* LongPressGesture.swift in Sources */,
 				BAF858F92AB8B87300F3EE4F /* DragGesture.swift in Sources */,
+				BAEB028F2B277B4C002C1B56 /* PropertyWrappers2Example.swift in Sources */,
 				BA465CC52ACF233900FCC6AC /* MultiplesSheets.swift in Sources */,
 				BA1574242B0D5554000F0528 /* PropertyWrapperExample.swift in Sources */,
 				BACE57F82B02890D000E8BD3 /* KeypathsExample.swift in Sources */,
