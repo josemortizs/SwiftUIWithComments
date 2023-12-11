@@ -14,32 +14,24 @@ import Combine
 @propertyWrapper
 public struct MyPublished<Value> {
     
+    private var publisher: Publisher
+    
     public var wrappedValue: Value {
         willSet {  // Before modifying wrappedValue
             publisher.subject.send(newValue)
+            print("newValue: \(newValue)")
         }
     }
     
     public var projectedValue: Publisher {
         publisher
     }
-    private var publisher: Publisher
     
-    public struct Publisher: Combine.Publisher {
-        public typealias Output = Value
-        public typealias Failure = Never
-        var subject: CurrentValueSubject<Value, Never> // PassthroughSubject will lack the call of initial assignment
-        public func receive<S>(subscriber: S) where S: Subscriber, Self.Failure == S.Failure, Self.Output == S.Input {
-            subject.subscribe(subscriber)
-        }
-        init(_ output: Output) {
-            subject = .init(output)
-        }
-    }
     public init(wrappedValue: Value) {
         self.wrappedValue = wrappedValue
         publisher = Publisher(wrappedValue)
     }
+    
     public static subscript<OuterSelf: ObservableObject>(
         _enclosingInstance observed: OuterSelf,
         wrapped wrappedKeyPath: ReferenceWritableKeyPath<OuterSelf, Value>,
@@ -55,10 +47,22 @@ public struct MyPublished<Value> {
             }
         }
     }
+    
+    public struct Publisher: Combine.Publisher {
+        public typealias Output = Value
+        public typealias Failure = Never
+        var subject: CurrentValueSubject<Value, Never> // PassthroughSubject will lack the call of initial assignment
+        public func receive<S>(subscriber: S) where S: Subscriber, Self.Failure == S.Failure, Self.Output == S.Input {
+            subject.subscribe(subscriber)
+        }
+        init(_ output: Output) {
+            subject = .init(output)
+        }
+    }
 }
 
 final class ExampleMVVMPropertyWrappersViewModel: ObservableObject {
-    @MyPublished var name: String = ""
+    @MyPublished var name: String = "Alberto Ortiz"
     
     init() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
