@@ -1,15 +1,23 @@
 //
-//  GenericFilePropertyManager.swift
+//  GenericFileManagerPropertyKeyPatch.swift
 //  SwiftUIWithComments
 //
-//  Created by Jose Manuel Ortiz Sanchez on 11/12/23.
+//  Created by Jose Manuel Ortiz Sanchez on 18/12/23.
 //
 
 import SwiftUI
 
+struct FileManagerValues {
+    static let shared = FileManagerValues()
+    private init() { }
+    
+    let userProfile = "user_profile"
+}
+
+// TODO: Pendiente de modificar
 @available(iOS 16.0, *)
 @propertyWrapper
-struct GenericFileManagerProperty<T: Codable>: DynamicProperty {
+struct GenericFileManagerPropertyKeyPath<T: Codable>: DynamicProperty {
     
     @State private var value: T?
     let key: String
@@ -59,47 +67,12 @@ struct GenericFileManagerProperty<T: Codable>: DynamicProperty {
     }
 }
 
-struct User: Codable {
-    let name: String
-    let age: Int
-    let isPremium: Bool
-}
-
-@available(iOS 16.0, *)
-struct GenericFilePropertyManager: View {
-    
-    @GenericFileManagerProperty("user_profile") private var userProfile: User?
-    
+struct GenericFileManagerPropertyKeyPatch_ExampleUse: View {
     var body: some View {
-        VStack(spacing: 40) {
-            Text("Hello, \(userProfile?.name ?? "no_user_name")!")
-            
-            SomeBindingView(userProfile: $userProfile)
-
-        }
-        .onAppear(perform: {
-            print(NSHomeDirectory())
-        })
-    }
-}
-
-struct SomeBindingView: View {
-    
-    @Binding var userProfile: User?
-    
-    var body: some View {
-        Button(action: {
-            userProfile = User(name: "Alberto Ortiz Sánchez", age: 36, isPremium: true)
-        }, label: {
-            Text("Change user...")
-        })
+        Text("Hello, World!")
     }
 }
 
 #Preview {
-    if #available(iOS 16.0, *) {
-        GenericFilePropertyManager()
-    } else {
-        Text("")
-    }
+    GenericFileManagerPropertyKeyPatch_ExampleUse()
 }

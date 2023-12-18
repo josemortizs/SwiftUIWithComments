@@ -63,9 +63,11 @@ struct Uppercased: DynamicProperty {
     }
 }
 
+@available(iOS 16.0, *)
 struct PropertyWrappers2Example: View {
     
     @Uppercased private var title: String = "Hello, world!"
+    @FileManagerProperty("user_profile") private var userProfile: String = "Test"
     
     var body: some View {
         VStack {
@@ -77,5 +79,9 @@ struct PropertyWrappers2Example: View {
 }
 
 #Preview {
-    PropertyWrappers2Example()
+    if #available(iOS 16.0, *) {
+        PropertyWrappers2Example()
+    } else {
+        Text("")
+    }
 }
