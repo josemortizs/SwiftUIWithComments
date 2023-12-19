@@ -89,7 +89,7 @@ struct SomeBindingView: View {
     
     var body: some View {
         Button(action: {
-            userProfile = User(name: "Alberto Ortiz Sánchez", age: 36, isPremium: true)
+            userProfile = User(name: "Pepe Ortiz Sánchez", age: 36, isPremium: true)
         }, label: {
             Text("Change user...")
         })

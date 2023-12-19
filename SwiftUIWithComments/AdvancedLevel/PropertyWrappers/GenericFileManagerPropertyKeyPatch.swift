@@ -54,6 +54,24 @@ struct GenericFileManagerPropertyKeyPath<T: Codable>: DynamicProperty {
         }
     }
     
+    init(_ key: KeyPath<FileManagerValues, String>) {
+        
+        let keypath = FileManagerValues.shared[keyPath: key]
+        let key = keypath
+        
+        self.key = key
+        do {
+            let url = FileManager.documentsPath(key: key)
+            let data = try Data(contentsOf: url)
+            let object = try JSONDecoder().decode(T.self, from: data)
+            _value = State(wrappedValue: object)
+            print("SUCCESS READ")
+        } catch {
+            _value = State(wrappedValue: nil)
+            print("ERROR READ: \(error.localizedDescription)")
+        }
+    }
+    
     @available(iOS 16.0, *)
     func save(newValue: T?) {
         do {
@@ -67,12 +85,28 @@ struct GenericFileManagerPropertyKeyPath<T: Codable>: DynamicProperty {
     }
 }
 
+@available(iOS 16.0, *)
 struct GenericFileManagerPropertyKeyPatch_ExampleUse: View {
+    
+    @GenericFileManagerPropertyKeyPath(\.userProfile) private var userProfile: User?
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack(spacing: 40) {
+            Text("Hello, \(userProfile?.name ?? "no_user_name")!")
+            
+            SomeBindingView(userProfile: $userProfile)
+
+        }
+        .onAppear(perform: {
+            print(NSHomeDirectory())
+        })
     }
 }
 
 #Preview {
-    GenericFileManagerPropertyKeyPatch_ExampleUse()
+    if #available(iOS 16.0, *) {
+        GenericFileManagerPropertyKeyPatch_ExampleUse()
+    } else {
+        Text("iOS < 16.0")
+    }
 }

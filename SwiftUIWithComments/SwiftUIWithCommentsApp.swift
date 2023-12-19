@@ -12,7 +12,7 @@ struct SwiftUIWithCommentsApp: App {
     var body: some Scene {
         WindowGroup {
             if #available(iOS 16.0, *) {
-                GenericFilePropertyManager()
+                GenericFileManagerPropertyKeyPatch_ExampleUse()
             } else {
                 Text("iOS < 16.0")
             }

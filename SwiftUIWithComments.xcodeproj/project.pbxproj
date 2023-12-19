@@ -141,8 +141,8 @@
 				BA1574232B0D5554000F0528 /* PropertyWrapperExample.swift */,
 				BAEB028E2B277B4C002C1B56 /* PropertyWrappers2Example.swift */,
 				BAEB02902B277FF4002C1B56 /* GenericFilePropertyManager.swift */,
-				BAEB02922B27820A002C1B56 /* ExampleMVVMPropertyWrappers.swift */,
 				BACAED0A2B30C64B006E9DAD /* GenericFileManagerPropertyKeyPatch.swift */,
+				BAEB02922B27820A002C1B56 /* ExampleMVVMPropertyWrappers.swift */,
 			);
 			path = PropertyWrappers;
 			sourceTree = "<group>";
