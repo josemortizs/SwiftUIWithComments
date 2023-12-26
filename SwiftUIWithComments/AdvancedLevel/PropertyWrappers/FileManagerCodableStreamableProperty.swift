@@ -1,30 +1,20 @@
 //
-//  GenericFileManagerPropertyKeyPatch.swift
+//  GenericFileManagerPropertyPublisher.swift
 //  SwiftUIWithComments
 //
-//  Created by Jose Manuel Ortiz Sanchez on 18/12/23.
+//  Created by Jose Manuel Ortiz Sanchez on 26/12/23.
 //
 
 import SwiftUI
-
-struct FileManagerValues {
-    static let shared = FileManagerValues()
-    private init() { }
-    
-    let userProfile = FileManagerKeypath(key: "user_profile", type: User.self)
-}
-
-struct FileManagerKeypath<T: Codable> {
-    let key: String
-    let type: T.Type
-}
+import Combine
 
 @available(iOS 16.0, *)
 @propertyWrapper
-struct GenericFileManagerPropertyKeyPath<T: Codable>: DynamicProperty {
+struct FileManagerCodableStreamableProperty<T: Codable>: DynamicProperty {
     
     @State private var value: T?
     let key: String
+    private let publisher: CurrentValueSubject<T?, Never>
     
     var wrappedValue: T? {
         get {
@@ -35,13 +25,8 @@ struct GenericFileManagerPropertyKeyPath<T: Codable>: DynamicProperty {
         }
     }
     
-    var projectedValue: Binding<T?> {
-        Binding {
-            wrappedValue
-        } set: { newValue in
-            wrappedValue = newValue
-        }
-
+    var projectedValue: CurrentValueSubject<T?, Never> {
+        publisher
     }
     
     init(_ key: String) {
@@ -51,9 +36,11 @@ struct GenericFileManagerPropertyKeyPath<T: Codable>: DynamicProperty {
             let data = try Data(contentsOf: url)
             let object = try JSONDecoder().decode(T.self, from: data)
             _value = State(wrappedValue: object)
+            publisher = CurrentValueSubject(object)
             print("SUCCESS READ")
         } catch {
             _value = State(wrappedValue: nil)
+            publisher = CurrentValueSubject(nil)
             print("ERROR READ: \(error.localizedDescription)")
         }
     }
@@ -70,19 +57,22 @@ struct GenericFileManagerPropertyKeyPath<T: Codable>: DynamicProperty {
             let data = try Data(contentsOf: url)
             let object = try JSONDecoder().decode(T.self, from: data)
             _value = State(wrappedValue: object)
+            publisher = CurrentValueSubject(object)
             print("SUCCESS READ")
         } catch {
             _value = State(wrappedValue: nil)
+            publisher = CurrentValueSubject(nil)
             print("ERROR READ: \(error.localizedDescription)")
         }
     }
     
     @available(iOS 16.0, *)
-    func save(newValue: T?) {
+    private func save(newValue: T?) {
         do {
             let data = try JSONEncoder().encode(newValue)
             try data.write(to: FileManager.documentsPath(key: key))
             value = newValue
+            publisher.send(newValue)
             print("Success saved")
         } catch {
             print(error.localizedDescription)
@@ -91,31 +81,27 @@ struct GenericFileManagerPropertyKeyPath<T: Codable>: DynamicProperty {
 }
 
 @available(iOS 16.0, *)
-struct GenericFileManagerPropertyKeyPatch_ExampleUse: View {
+struct GenericFileManagerPropertyPublisher: View {
     
-    /*
-     @GenericFileManagerPropertyKeyPath(\.userProfile) private var userProfile: User?
-     It is no longer necessary to specify the type of userProfile:
-     @GenericFileManagerPropertyKeyPath(\.userProfile) private var userProfile
-     */
-    @GenericFileManagerPropertyKeyPath(\.userProfile) private var userProfile
-
+    @FileManagerCodableStreamableProperty(\.userProfile) private var userProfile
+    
     var body: some View {
-        VStack(spacing: 40) {
-            Text("Hello, \(userProfile?.name ?? "no_user_name")!")
-            
-            SomeBindingView(userProfile: $userProfile)
-
+        VStack {
+            Button {
+                userProfile = User(name: "Draka Gil Ortiz", age: 6, isPremium: true)
+            } label: {
+                Text(userProfile?.name ?? "")
+            }
         }
-        .onAppear(perform: {
-            print(NSHomeDirectory())
-        })
+        .onReceive($userProfile) { newValue in
+            print("Received new value of: \(newValue)")
+        }
     }
 }
 
 #Preview {
     if #available(iOS 16.0, *) {
-        GenericFileManagerPropertyKeyPatch_ExampleUse()
+        GenericFileManagerPropertyPublisher()
     } else {
         Text("iOS < 16.0")
     }

@@ -61,25 +61,38 @@ public struct MyPublished<Value> {
     }
 }
 
+@available(iOS 16.0, *)
 final class ExampleMVVMPropertyWrappersViewModel: ObservableObject {
     @MyPublished var name: String = "Alberto Ortiz"
+    @FileManagerCodableStreamableProperty(\.userProfile) var userProfile
     
     init() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.name = "José Manuel Ortiz Sánchez"
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+            self.userProfile = User(name: "Zeus", age: 12, isPremium: true)
+        }
     }
 }
 
+@available(iOS 16.0, *)
 struct ExampleMVVMPropertyWrappers: View {
     
     @StateObject var viewmodel = ExampleMVVMPropertyWrappersViewModel()
     
     var body: some View {
-        Text(viewmodel.name)
+        VStack {
+            Text(viewmodel.name)
+            Text(viewmodel.userProfile?.name ?? "") // no refresh
+        }
     }
 }
 
 #Preview {
-    ExampleMVVMPropertyWrappers()
+    if #available(iOS 16.0, *) {
+        ExampleMVVMPropertyWrappers()
+    } else {
+        Text("iOS < 16.0")
+    }
 }

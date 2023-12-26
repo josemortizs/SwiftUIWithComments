@@ -31,6 +31,7 @@
 		BA93A54C2ACDDAD000BC7098 /* GeometryRead2Examp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93A54B2ACDDAD000BC7098 /* GeometryRead2Examp.swift */; };
 		BA93A54E2ACDE18600BC7098 /* GeometryRead3Examp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93A54D2ACDE18600BC7098 /* GeometryRead3Examp.swift */; };
 		BA957B852AF962DD00ACF625 /* ErrorAlertExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA957B842AF962DD00ACF625 /* ErrorAlertExample.swift */; };
+		BAB84D7B2B3B56F60049848C /* FileManagerCodableStreamableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB84D7A2B3B56F60049848C /* FileManagerCodableStreamableProperty.swift */; };
 		BACAED0B2B30C64B006E9DAD /* GenericFileManagerPropertyKeyPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACAED0A2B30C64B006E9DAD /* GenericFileManagerPropertyKeyPatch.swift */; };
 		BACE57F82B02890D000E8BD3 /* KeypathsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE57F72B02890D000E8BD3 /* KeypathsExample.swift */; };
 		BADD9CC02AC49ABC00D34361 /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADD9CBF2AC49ABC00D34361 /* CustomCorner.swift */; };
@@ -88,6 +89,7 @@
 		BA93A54B2ACDDAD000BC7098 /* GeometryRead2Examp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryRead2Examp.swift; sourceTree = "<group>"; };
 		BA93A54D2ACDE18600BC7098 /* GeometryRead3Examp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryRead3Examp.swift; sourceTree = "<group>"; };
 		BA957B842AF962DD00ACF625 /* ErrorAlertExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertExample.swift; sourceTree = "<group>"; };
+		BAB84D7A2B3B56F60049848C /* FileManagerCodableStreamableProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerCodableStreamableProperty.swift; sourceTree = "<group>"; };
 		BACAED0A2B30C64B006E9DAD /* GenericFileManagerPropertyKeyPatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFileManagerPropertyKeyPatch.swift; sourceTree = "<group>"; };
 		BACE57F72B02890D000E8BD3 /* KeypathsExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypathsExample.swift; sourceTree = "<group>"; };
 		BADD9CBF2AC49ABC00D34361 /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				BAEB028E2B277B4C002C1B56 /* PropertyWrappers2Example.swift */,
 				BAEB02902B277FF4002C1B56 /* GenericFilePropertyManager.swift */,
 				BACAED0A2B30C64B006E9DAD /* GenericFileManagerPropertyKeyPatch.swift */,
+				BAB84D7A2B3B56F60049848C /* FileManagerCodableStreamableProperty.swift */,
 				BAEB02922B27820A002C1B56 /* ExampleMVVMPropertyWrappers.swift */,
 			);
 			path = PropertyWrappers;
@@ -425,6 +428,7 @@
 				BA06A8012ACC91AB00317B7E /* GeometryReaderSizeExample.swift in Sources */,
 				BA726F332AC1F798009FA0C7 /* CollapsableHeaderView.swift in Sources */,
 				BA465CC92ACF358300FCC6AC /* ScrollViewOffset.swift in Sources */,
+				BAB84D7B2B3B56F60049848C /* FileManagerCodableStreamableProperty.swift in Sources */,
 				BAE489502AF01F93009303B7 /* CustomBinding.swift in Sources */,
 				BA4E29C32AB247A6008F92D2 /* SwiftUIWithCommentsApp.swift in Sources */,
 				BAEB02912B277FF4002C1B56 /* GenericFilePropertyManager.swift in Sources */,
