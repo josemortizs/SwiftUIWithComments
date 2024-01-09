@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA06A7FB2ACC877900317B7E /* ScrollViewReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06A7FA2ACC877900317B7E /* ScrollViewReader.swift */; };
 		BA06A8012ACC91AB00317B7E /* GeometryReaderSizeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06A8002ACC91AB00317B7E /* GeometryReaderSizeExample.swift */; };
+		BA13A3422B4DD10C0058B458 /* OtherExampleWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA13A3412B4DD10C0058B458 /* OtherExampleWrapper.swift */; };
 		BA1574242B0D5554000F0528 /* PropertyWrapperExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1574232B0D5554000F0528 /* PropertyWrapperExample.swift */; };
 		BA1762F62ACDD2D000CA852B /* GeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1762F52ACDD2D000CA852B /* GeometryReader.swift */; };
 		BA2CD1E92ACB356000A4415C /* CollapsableHeaderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2CD1E82ACB356000A4415C /* CollapsableHeaderInfo.swift */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		BA06A7FA2ACC877900317B7E /* ScrollViewReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewReader.swift; sourceTree = "<group>"; };
 		BA06A8002ACC91AB00317B7E /* GeometryReaderSizeExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderSizeExample.swift; sourceTree = "<group>"; };
+		BA13A3412B4DD10C0058B458 /* OtherExampleWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherExampleWrapper.swift; sourceTree = "<group>"; };
 		BA1574232B0D5554000F0528 /* PropertyWrapperExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapperExample.swift; sourceTree = "<group>"; };
 		BA1762F52ACDD2D000CA852B /* GeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReader.swift; sourceTree = "<group>"; };
 		BA2CD1E82ACB356000A4415C /* CollapsableHeaderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderInfo.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				BAEB02902B277FF4002C1B56 /* GenericFilePropertyManager.swift */,
 				BACAED0A2B30C64B006E9DAD /* GenericFileManagerPropertyKeyPatch.swift */,
 				BAB84D7A2B3B56F60049848C /* FileManagerCodableStreamableProperty.swift */,
+				BA13A3412B4DD10C0058B458 /* OtherExampleWrapper.swift */,
 				BAEB02922B27820A002C1B56 /* ExampleMVVMPropertyWrappers.swift */,
 			);
 			path = PropertyWrappers;
@@ -441,6 +444,7 @@
 				BA465CC52ACF233900FCC6AC /* MultiplesSheets.swift in Sources */,
 				BA1574242B0D5554000F0528 /* PropertyWrapperExample.swift in Sources */,
 				BACE57F82B02890D000E8BD3 /* KeypathsExample.swift in Sources */,
+				BA13A3422B4DD10C0058B458 /* OtherExampleWrapper.swift in Sources */,
 				BA1762F62ACDD2D000CA852B /* GeometryReader.swift in Sources */,
 				BADD9CC42AC4AAD100D34361 /* Chapter.swift in Sources */,
 			);
